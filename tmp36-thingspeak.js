@@ -2,7 +2,7 @@
 var b = require ('bonescript'); // Read bonescript library
 var tempPin = 'P9_38'; // Pin location for temperature sensor
 
-var request = require('request'); // Library for making http calls
+var request = require('request'); // Node library for making http calls
 
 console.log("Sensor reading started.");
 console.log("Output at 10-sec intervals.");
@@ -27,9 +27,8 @@ function printTemp(x) {
 	console.log("_____________");
 	
 //Post captured temperature data to ThingSpeak
-	request.post('http://api.thingspeak.com:80/update',{form:{api_key: '8RAW0AKXG0J6XZX5', field1: temp_f, field2: temp_c}});
+	request.post('http://api.thingspeak.com:80/update',{form:{api_key: 'THINGSPEAK_WRITE_API_KEY_HERE', field1: temp_f, field2: temp_c}});
 
 //Post captured temperature data to Twitter via ThingSpeak's API
-	request.post('https://api.thingspeak.com/apps/thingtweet/1/statuses/update', {form:{api_key: 'YP8JXLM4FC0U0VTW', status: "The current Ground Control temperature is %%channel_51138_field_1%% F, %%channel_51138_field_2%% C"}});
-	request.post('https://zapier.com/hooks/catch/bnqnzw/');
+	request.post('https://api.thingspeak.com/apps/thingtweet/1/statuses/update', {form:{api_key: 'THINGTWEET_TWITTER_API_KEY_HERE', status: "The current Ground Control temperature is %%channel_CHANNEL_ID_HERE_field_1%% F, %%channel_CHANNEL_ID_HERE_field_2%% C"}});
 }
