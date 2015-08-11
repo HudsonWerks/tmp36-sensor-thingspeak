@@ -25,7 +25,7 @@ function printTemp(x) {
 	console.log("Fahrenheit: " + temp_f);
 	console.log("Celsius: " + temp_c);
 	console.log("_____________");
-	
+
 //Post captured temperature data to ThingSpeak
 	request.post('http://api.thingspeak.com:80/update',{form:{api_key: 'THINGSPEAK_WRITE_API_KEY_HERE', field1: temp_f, field2: temp_c}});
 
