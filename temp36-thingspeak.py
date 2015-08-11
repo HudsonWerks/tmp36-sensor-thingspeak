@@ -20,7 +20,7 @@ while True:
 	print('Fahrenheit: %d' % (temp_f))
 	
 # ThingSpeak code
-	params = urllib.urlencode({'field1': temp_f,'field2': temp_c, 'key':'8RAW0AKXG0J6XZX5'}) # Thingspeak field and API info
+	params = urllib.urlencode({'field1': temp_f,'field2': temp_c, 'key':'API_WRITE_KEY_HERE'}) # Thingspeak field and API info
 	headers = {"Content-type": "application/x-www-form-urlencoded","Accept":"text/plain"}
 	connection = httplib.HTTPConnection("api.thingspeak.com:80")
 	connection.request("POST", "/update", params, headers)
