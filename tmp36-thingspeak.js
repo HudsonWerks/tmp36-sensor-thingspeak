@@ -26,9 +26,9 @@ function printTemp(x) {
 	console.log("Celsius: " + temp_c);
 	console.log("_____________");
 
-//Post captured temperature data to ThingSpeak
+//Post temperature data to ThingSpeak
 	request.post('http://api.thingspeak.com:80/update',{form:{api_key: 'THINGSPEAK_WRITE_API_KEY_HERE', field1: temp_f, field2: temp_c}});
 
-//Post captured temperature data to Twitter via ThingSpeak's API
+//Post temperature data to Twitter via ThingSpeak's API
 	request.post('https://api.thingspeak.com/apps/thingtweet/1/statuses/update', {form:{api_key: 'THINGTWEET_TWITTER_API_KEY_HERE', status: "The current Ground Control temperature is %%channel_CHANNEL_ID_HERE_field_1%% F, %%channel_CHANNEL_ID_HERE_field_2%% C"}});
 }
