@@ -2,7 +2,7 @@
 var b = require ('bonescript'); // Read bonescript library
 var tempPin = 'P9_38'; // Pin location for temperature sensor
 
-var request = require('request'); // Node library for making http calls
+var request = require('request'); // Node library for simplifying http calls
 
 console.log("Sensor reading started.");
 console.log("Output at 10-sec intervals.");
